@@ -1,0 +1,73 @@
+<html>
+
+    <head>
+        <title>Basics of Encryption</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+        <h1>Basics of Encryption</h1>
+        <br>
+        <h3>Stream Ciphers</h3>
+        <p>Stream ciphers are a way of encrypting data on a network. One way that stream ciphers can work is by performing an XOR calculation between the bits (zeros and ones) of data being transmitted and a “key stream.”</p>
+        <p>An XOR calculation is a type of binary calculation where the result is 1 only when one input is a 1, otherwise the result is 0.</p>
+        <p>Given the same input, this is reversible, meaning if two people have access to a key stream they can send each other encrypted data over an unsecured network.</p>
+        <p>Here's a helpful table showing outputs given inputs A and B:</p>
+        <table>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>Output:</th>
+            </tr>
+            <tr>
+                <th>0</th>
+                <th>0</th>
+                <th>0</th>
+            </tr>
+            <tr>
+                <th>0</th>
+                <th>1</th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>1</th>
+                <th>0</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>0</th>
+                <th>1</th>
+            </tr>
+        </table>
+
+        <br>
+
+        <h3>RSA Encryption</h3>
+        <p>RSA (an acronym of Rivest-Shamir-Adleman, the names of the creators) encryption is an asymmetric cryptographic algorithm, which means that, instead of one key being shared, there are two different keys.</p>
+        <p>The two types of key are a public key, which is shared with everyone and can be used to encrypt data, and a private key, which is kept secret by the keyholder and is used to decrypt any data encrypted with the public key.</p>
+        <p>This means that anyone can send encrypted messages to someone, but only the intended recipient can decrypt and see the data being sent.</p>
+        <p>RSA keys are usually generated using two large prime numbers using the following mathematical calculations:</p>
+        <ol>
+            <li>Choose two prime numbers <i>p</i> and <i>q</i></li>
+            <li>Calculate n, where n = p*q</li>
+            <li>Calculate the totient φ(n) which is equal to (p - 1)*(q - 1)</li>
+            <li>Choose an integer e such that the greatest common denominator (GCD) of φ(n) and e is 1.</li>
+            <li>Finally, calculate d so that d*e mod(n) = 1, where mod is the modulus function (most calculators have a button for this)</li>
+        </ol>
+        <p>Once you have all those numbers, (n, e) is your public key and d is your private key.</p>
+        <br>
+        <p>Here's how to encrypt and decrypt data:</p>
+        <ol>
+            <li>Let M be the message you want to encrypt (as an integer).</li>
+            <li>Calculate M<sup>e</sup> mod(n), where the result is your ciphertext.</li>
+            <li>To decrypt the ciphertext C, calculate C<sup>d</sup> mod(n)</li>
+        </ol>
+        <p>Something important to note is that the integer you use for your message has to be smaller than n, otherwise it won't work.</p>
+        <br><br><br><br><br>
+        <a href="wiki.html">Back to Wiki Home</a>
+    
+
+    </body>
+
+</html>
