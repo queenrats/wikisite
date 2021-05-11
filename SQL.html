@@ -6,5 +6,33 @@
 
     <body>
         <h1>Server Stacks, SQL, and Common Security Problems</h1>
+        <br>
+        <h3>Server Stacks</h3>
+        <p>Servers on the internet usually have a variety of software installed on them.</p>
+        <p>While this (perhaps obviously) includes the operating system, it can also include a number of other things such as database software and even the services needed to host a website in the first place.</p>
+        <p>While having lots of different pieces of software in the server stack is great for functionality, it can also introduce security vulnerabilities.</p>
+        
+        <br>
+
+        <h3>SQL</h3>
+        <p>SQL is a language used for programming databases. There are a number of database management systems that use SQL, including MySQL, Microsoft SQL, MariaDB, and PostgreSQL.</p>
+        <p>SQL queries are designed to be easily read, and use whole uppercase words. For example, "SELECT * FROM data" selects all data (the *) from the database table "data".</p>
+        <p>There are plenty of other types of commands, such as UPDATE, INSERT INTO, and CREATE DATABASE.</p>
+        <p>If a server is using a database, it can dynamically populate websites with information from the database. However, this can sometimes be taken advantage of.</p>
+        <p>SQL injection is a way of executing SQL commands on a server's database through a website that isn't secured properly.</p>
+        <p>SQL injection requires a user input that queries a database, and involves an attacker "tagging on" something to the query. This could be as simple as viewing the whole table, or deleting it entirely.</p>
+        <p>A common way that SQL injection is tested for in database search functions is by entering the string "'OR '1=1" into the input box.</p>
+        <p>This works because of the SQL modifier WHERE, which means a search only returns values where something equals a given value, in this case the given value is what the user put in.</p>
+        <p>The way the apostrophes are structured means that, as well as the intended WHERE clause, it also returns rows where '1=1' is true, which since the statement is true, means every row is returned.</p>
+
+        <br>
+
+        <h3>Common Security Problems</h3>
+        <p>SQL injection isn't the only common problem that inseecure websites can face.</p>
+        <p>There is another type of injection called Script Injection, which involves executing Javascript on a site that shouldn't allow it.</p>
+        <p>A common way script injection is tested for is by trying to run a Javascript "alert" function inside HTML script tags. If an alert box appears, then the site is vulnerable to script injection.</p>
+        <p>As a reminder, script tags look like this: &lt;script&gt;, and an example of correct syntax for the alert function is "alert("test")</p>
+        <p></p>
+        <p>Other common security problems include Cross-Site Request Forgery (CSRF), Security Misconfiguration, and Insecure direct Object References.</p>
     </body>
 </html>
